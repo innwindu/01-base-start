@@ -5,36 +5,34 @@ const submitBtn = document.getElementById ('submit')
 const plusBtn = document.getElementById ('plus')
 const minusBtn = document.getElementById ('minus')
 const multiplyBtn = document.getElementById ('multiply')
-const divisionBtn = document.getElementById ('division')
+
 let action = '+'
 
 plusBtn.onclick = function () {
     action = '+'
-    
 }
 minusBtn.onclick = function () {
-    action = '-'
-    
+    action = '-'  
 }
 multiplyBtn.onclick = function () {
-    action = '*'
-    
+    action = '*' 
 }
 
 function printResult (result) {
-    if (result<0) {
+    if (result < 0) {
         resultElement.style.color = 'red'
     } else {
         resultElement.style.color = 'green'
     }
     resultElement.textContent = result
 }
+
 function computeNumbersWithAction (inp1, inp2, actionSymbol) {
     const num1 = Number (inp1.value)
     const num2 = Number (inp2.value)
-    return actionSymbol == '+' ? num1+num2 :
-            actionSymbol == '-'? num1-num2 :
-            actionSymbol == '*' ? num1*num2 : num1/num2
+    return  actionSymbol == '+' ? num1 + num2 :
+            actionSymbol == '-' ? num1 - num2 :
+            actionSymbol == '*' ? num1 * num2 : num1 / num2
 }
 
 submitBtn.onclick = function () {
