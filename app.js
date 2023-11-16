@@ -5,37 +5,29 @@ const submitBtn = document.getElementById ('submit')
 const plusBtn = document.getElementById ('plus')
 const minusBtn = document.getElementById ('minus')
 const multiplyBtn = document.getElementById ('multiply')
+const divisionBtn = document.getElementById ('division')
 
-let action = '+'
+let x = 0
 
 plusBtn.onclick = function () {
-    action = '+'
+    x = +input1.value + +input2.value
 }
 minusBtn.onclick = function () {
-    action = '-'  
+    x = +input1.value - +input2.value
 }
 multiplyBtn.onclick = function () {
-    action = '*' 
+    x = +input1.value * +input2.value
+}
+divisionBtn.onclick = function () {
+    x = +input1.value / +input2.value
 }
 
 function printResult (result) {
-    if (result < 0) {
-        resultElement.style.color = 'red'
-    } else {
-        resultElement.style.color = 'green'
-    }
+    result < 0 ? resultElement.style.color = 'red' : resultElement.style.color = 'green'
     resultElement.textContent = result
 }
 
-function computeNumbersWithAction (inp1, inp2, actionSymbol) {
-    const num1 = Number (inp1.value)
-    const num2 = Number (inp2.value)
-    return  actionSymbol == '+' ? num1 + num2 :
-            actionSymbol == '-' ? num1 - num2 :
-            actionSymbol == '*' ? num1 * num2 : num1 / num2
-}
-
 submitBtn.onclick = function () {
-    const result = computeNumbersWithAction (input1, input2, action)
+    const result = x
     printResult (result)
 }
