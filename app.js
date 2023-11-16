@@ -7,7 +7,7 @@ const minusBtn = document.getElementById ('minus')
 const multiplyBtn = document.getElementById ('multiply')
 const divisionBtn = document.getElementById ('division')
 
-let x = 0
+let x
 
 plusBtn.onclick = function () {
     x = +input1.value + +input2.value
