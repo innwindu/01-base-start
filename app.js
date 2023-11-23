@@ -7,20 +7,31 @@ const minusBtn = document.getElementById ('minus')
 const multiplyBtn = document.getElementById ('multiply')
 const divisionBtn = document.getElementById ('division')
 
-let x = 0
+let x
 
-plusBtn.onclick = function () {
+const handleClickPlusButton = () => {
     x = +input1.value + +input2.value
-}
-minusBtn.onclick = function () {
+ }
+ 
+ plusBtn.addEventListener("click", handleClickPlusButton)
+
+ const handleClickMinusButton = () => {
     x = +input1.value - +input2.value
-}
-multiplyBtn.onclick = function () {
+ }
+ 
+ minusBtn.addEventListener("click", handleClickMinusButton)
+
+ const handleClickMultiplyButton = () => {
     x = +input1.value * +input2.value
-}
-divisionBtn.onclick = function () {
+ }
+ 
+ multiplyBtn.addEventListener("click", handleClickMultiplyButton)
+
+ const handleClickDivisionButton = () => {
     x = +input1.value / +input2.value
-}
+ }
+ 
+ divisionBtn.addEventListener("click", handleClickDivisionButton)
 
 function printResult (result) {
     result < 0 ? resultElement.style.color = 'red' : resultElement.style.color = 'green'
