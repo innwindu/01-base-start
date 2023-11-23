@@ -1,3 +1,5 @@
+const myOwnCalculator = () =>{
+    
 const resultElement = document.getElementById ('result')
 const input1 = document.getElementById ('input1')
 const input2 = document.getElementById ('input2')
@@ -34,7 +36,8 @@ const handleClickPlusButton = () => {
  divisionBtn.addEventListener("click", handleClickDivisionButton)
 
 function printResult (result) {
-    result < 0 ? resultElement.style.color = 'red' : resultElement.style.color = 'green'
+    const color = result < 0 ? 'red' : 'green'
+    resultElement.style.color = color
     resultElement.textContent = result
 }
 
@@ -42,3 +45,6 @@ submitBtn.onclick = function () {
     const result = x
     printResult (result)
 }
+}
+
+myOwnCalculator()
